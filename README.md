@@ -4,7 +4,7 @@ Sales Prediction of Rossmann Store using Regression Algorithms
 ![image](https://user-images.githubusercontent.com/113968903/233614418-aff934cd-f431-4b49-bc82-dc7c623a7013.png)
 
 
-PROJECT OVERVIEW
+# PROJECT OVERVIEW
 # Research strategy
 To come up with initial questions and to formulate our research strategy, we should first look at the given guidance from Rossmann itself:
 
