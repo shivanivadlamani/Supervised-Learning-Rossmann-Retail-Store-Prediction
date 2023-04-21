@@ -1,13 +1,30 @@
-Linear Regression: A linear regression model finds a linear relationship between the input features and the output variable. It aims to minimize the difference between the predicted and actual values by adjusting the model coefficients. Linear regression is a simple and interpretable algorithm but it assumes a linear relationship between the input features and output variable which may not always hold true.
+# Linear Regression:
+A simple linear regression model aims to find the linear relationship between the input features X and the output variable Y. It can be represented by the equation:
+Y = β0 + β1X + ε
+where β0 is the intercept, β1 is the coefficient for the input feature X, and ε is the error term that captures the deviation of the predicted value from the actual value. The goal of linear regression is to estimate the values of β0 and β1 that minimize the sum of squared errors between the predicted and actual values.
 
-Lasso Regression: Lasso stands for Least Absolute Shrinkage and Selection Operator. It is a type of linear regression that adds a penalty term to the cost function to encourage sparsity in the model coefficients. This results in a simpler model with fewer features. Lasso is useful when the dataset has many features and some of them may not be relevant.
+# Lasso Regression:
+Lasso regression adds a penalty term to the cost function of linear regression to encourage sparsity in the model coefficients. The cost function can be represented as:
+minimize (RSS + α|β|)
+where RSS is the residual sum of squares, β is the vector of coefficients, and α is the regularization parameter that controls the strength of the penalty term. The penalty term is the L1 norm of the coefficients, which encourages some of them to be exactly zero, resulting in a simpler model with fewer features.
 
-Ridge Regression: Ridge regression is another type of linear regression that adds a penalty term to the cost function but instead of encouraging sparsity, it restricts the magnitude of the coefficients. This helps to reduce the effect of multicollinearity, which is when two or more features are highly correlated.
+# Ridge Regression:
+Ridge regression also adds a penalty term to the cost function, but instead of encouraging sparsity, it restricts the magnitude of the coefficients. The cost function can be represented as:
+minimize (RSS + α∑β^2)
+where ∑β^2 is the sum of squared coefficients, and α is the regularization parameter that controls the strength of the penalty term. The penalty term is the L2 norm of the coefficients, which shrinks them towards zero but does not force them to be exactly zero.
 
-Decision Tree Regressor: A decision tree regressor builds a tree-like model by recursively splitting the dataset based on the input features. It predicts the output variable by traversing the tree from the root to a leaf node that corresponds to the predicted value. Decision trees are simple and interpretable but they can easily overfit the training data.
+# Decision Tree Regressor:
+A decision tree regressor builds a tree-like model by recursively splitting the dataset based on the input features. At each split, it selects the feature and the threshold that result in the largest reduction in the sum of squared errors. The predicted value at a leaf node is the average of the target values of the training examples that belong to that node.
 
-Random Forest Regressor: A random forest regressor is an ensemble of decision tree regressors. It works by constructing multiple decision trees on random subsets of the training data and then averaging their predictions. Random forests are less prone to overfitting than a single decision tree.
+# Random Forest Regressor:
+A random forest regressor is an ensemble of decision tree regressors. It works by constructing multiple decision trees on random subsets of the training data and then averaging their predictions. The final prediction is the average of the predictions of all the trees in the forest.
 
-XGBRegressor: XGBoost (Extreme Gradient Boosting) is a gradient boosting algorithm that combines multiple weak learners into a strong learner. It works by iteratively adding new trees to the model that minimize the residual errors of the previous trees. XGBoost is highly customizable and can handle large datasets but may be prone to overfitting.
+# XGBRegressor:
+XGBoost is a gradient boosting algorithm that combines multiple weak learners into a strong learner. The objective function of XGBoost can be represented as:
+minimize ΣL(yi, Φ(xi)) + ΣΩ(Φ)
+where L is the loss function, Φ is the prediction function, and Ω is the regularization term that controls the complexity of the model. The algorithm works by iteratively adding new trees to the model that minimize the residual errors of the previous trees.
 
-AdaBoost Regressor: AdaBoost (Adaptive Boosting) is another boosting algorithm that combines multiple weak learners. It works by adjusting the weights of the training data based on the errors of the previous models. AdaBoost is less customizable than XGBoost but can still achieve good performance with simple models.
+# AdaBoost Regressor:
+AdaBoost is another boosting algorithm that combines multiple weak learners. The objective function of AdaBoost can be represented as:
+minimize Σexp(-yiF(xi))
+where yi is the target value, F is the prediction function, and the exponential term adjusts the weights of the training examples based on the errors of the previous models. The algorithm works by iteratively adding new models to the ensemble that focus on the examples with higher weights.
